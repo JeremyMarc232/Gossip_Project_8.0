@@ -1,0 +1,41 @@
+<html>
+  <body>
+  
+    <br>
+    <div class="text-center">
+    <h1>Inscrit toi !</h1>
+    <br>
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+      <%= label_tag 'Prénom :' %>
+      <%= text_field_tag 'first_name', @user.first_name,:placeholder=>'prénom' %>
+      <br /> <br />
+
+      <%= label_tag 'Nom :' %>
+      <%= text_area_tag 'last_name', @user.last_name,:placeholder=>'nom' %>
+      <br /> <br />
+
+      <%= label_tag 'Mot de pass :' %>
+      <%= text_field_tag 'password' , @password_digest,:placeholder=>'mot de pass' %>
+       <br /> <br />
+
+      <%= label_tag 'Confirmation Mot de pass :' %>
+      <%= text_field_tag 'password', @password_digest,:placeholder=>'Confirmation mot de pass' %>
+
+      <br /> <br />
+
+      <%= submit_tag "Envoyer" %>
+
+    <% end %>
+    <br>
+    <%if @disconect %>
+
+    <div class="alert alert-danger" role="alert">
+       <p class="text-center"> Erreur ! </p>
+    </div>
+    </div>
+    <%end%>
+
+    <!-- ... -->
+  </body>
+</html>

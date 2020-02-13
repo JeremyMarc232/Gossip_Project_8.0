@@ -5,6 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
   </head>
 
@@ -34,6 +37,16 @@
         <li class="nav-item active">
     <%= link_to "Sign In", new_user_path, :class=>"nav-link" %>
         </li>
+        
+     <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Log menu
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" <%= link_to "Log in", new_session_path, :class=>"nav-link" %></a>
+    <a class="dropdown-item" <%= link_to "Log out", new_session_path(session.id), method: :delete, :class=>"nav-link" %></a>
+  </div>
+</div>
     </ul>
   </div>
 

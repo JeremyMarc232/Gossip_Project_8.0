@@ -14,7 +14,7 @@ User.destroy_all
 Comment.destroy_all
 Gossip.destroy_all
 
-a = User.create!(first_name: "wejdi", last_name: "Hedia", email: "jojo@gmail.com", password: "foobar")
+a = User.create!(first_name: "Jeremy", last_name: "Marc", email: "jojo@gmail.com", password: "foobar")
 
 
 # creating fake users
@@ -22,6 +22,7 @@ a = User.create!(first_name: "wejdi", last_name: "Hedia", email: "jojo@gmail.com
   User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
   )
 end
 
